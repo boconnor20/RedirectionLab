@@ -1,9 +1,5 @@
 import java.util.*;
 public class PigLatin{
-  public static void main(String[] args) {
-
-  }
-
     public static String pigLatinSimple(String s){
     String t = s.toLowerCase();
     String[] vowels = new String[]{"a","e","i","o","u"};
@@ -65,7 +61,6 @@ public class PigLatin{
             LNumber = true;
           }
         }
-        //if not is letter and not is number then is punc
         if(LLetter==false && LNumber==false){
           punc = true;
         }
@@ -73,5 +68,19 @@ public class PigLatin{
           return pigLatin(t.substring(0,t.length()-1)) + t.substring(t.length()-1);
         }
         return pigLatin(t);
+      }
+      public static void main(String[] args) {
+        Scanner n = new Scanner(System.in);
+        while(n.hasNext()){
+          Scanner line = new Scanner(n.nextLine());
+          while(line.hasNext()){
+            String s = line.next();
+            String temp = "";
+            temp += pigLatinBest(s);
+            System.out.print(temp + " ");
+          }
+          System.out.println();
+      }
+
       }
 }
